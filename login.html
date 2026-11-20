@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <form id="login">
+        <label>Name</label>
+        <div>
+            <input type="text" id="email" placeholder="email">
+        </div>
+        <label>Password</label>
+        <div>
+            <input type="number" id="password" placeholder="password">
+        </div>
+
+
+        </div>
+        <button type="submit"> submit</button>
+        <button id="open">successfully</button>
+
+    </form>
+    <script>
+        document.getElementById("login").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+
+            let data = JSON.parse(localStorage.getItem("users")) || [];
+            let user = data.find(function (item) {
+                return item.useremail === email && item.userpassword === password;
+            })
+            if (user) {
+                 open()
+                window.location.href = "main.html";
+            }
+            else {
+              alert("not same"); 
+            }
+        })
+       function open(){
+        setTimeout(function(){
+        document.getElementById("open").style.display="flex"
+
+        },5000)
+       }
+
+    </script>
+</body>
+
+</html>

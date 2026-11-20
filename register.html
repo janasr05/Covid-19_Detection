@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+    <form id="register">
+        
+            <label> Name</label>
+            <div>
+            <input type="text" id="username" placeholder="user name">
+           
+        </div>
+         <p id="nameerror"></p>
+        <label> Email</label>
+        <div>
+            
+            <input type="text" id="useremail" placeholder="user email">
+            
+        </div>
+        <p id="emailerror"></p>
+         <label> Password</label>
+        <div>
+           
+            <input type="number" id="userpassword" placeholder="user password">
+            
+        </div>
+        <p id="passworderror"></p>
+         <label>Password</label>
+        <div>
+           
+            <input type="number" id="conformpassword" placeholder="conform password">
+            
+        </div>
+        <p id="conformpassworderror"></p>
+        <button type="submit">submit</button>
+    </form>
+    <script>
+        document.getElementById("register").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username");
+            const useremail = document.getElementById("useremail");
+            const userpassword = document.getElementById("userpassword");
+            const conformpassword = document.getElementById("conformpassword");
+
+            const nameerror=document.getElementById("nameerror");
+            const emailerror=document.getElementById("emailerror");
+            const passworderror=document.getElementById("passworderror");
+            const conformpassworderror=document.getElementById("conformpassworderror");
+
+            nameerror.textContent="";
+            emailerror.textContent="";
+              passworderror.textContent="";
+               conformpassworderror.textContent="";
+
+               let isvalid=true;
+
+               if(username.value.trim()===""){
+                nameerror.textContent="name requrted";
+                isvalid=false;
+               }else if(username.value.trim().length<3){
+                nameerror.textContent="most above 3 latter";
+                isvalid=false;
+               }
+               const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+               if(useremail.value.trim()=== ""){
+                  emailerror.textContent="email requerted";
+                  isvalid=false;
+               }else if(!emailRegex.test(useremail.value.trim())){
+                emailerror.textContent="not email formate";
+                isvalid=false;
+               }
+               if(userpassword.value ===""){
+                passworderror.textContent="password requerted";
+               isvalid=false;
+               }else if(userpassword.value.length<6){
+                passworderror.textContent="must above 6 number";
+                isvalid=false;
+               }
+               if(conformpassword.value===""){
+                conformpassworderror.textContent="conform password requrdet";
+                isvalid=false;
+               }else if(userpassword.value !==conformpassword.value ){
+                 conformpassworderror.textContent="conform password requrdet";
+                 isvalid=false;
+
+
+               }
+               if(isvalid){
+                let user={
+                    username:username.value.trim(),
+                    useremail:useremail.value.trim(),
+                    userpassword:userpassword.value,
+                    conformpassword:conformpassword.value 
+                };
+                  
+                let data=JSON.parse(localStorage.getItem("users"))||[];
+                data.push(user);
+                localStorage.setItem("users",JSON.stringify(data));
+                alert("register successfully")
+                window.location.href="login.html"
+                 
+
+               }
+
+            
+        })
+    </script>
+</body>
+
+</html>
