@@ -1,401 +1,176 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f6fa;
-    color: #222;
+    width: 100%;
+    height: 100vh;
+    font-family: "poppins";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #03035a;
+
 }
 
-button, input, select, textarea {
-    font: inherit;
+.fullcontainer {
+    width: 1300px;
+    height: 700px;
+    border: 1px solid rgb(248, 239, 239);
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px;
+    /* transition: 4s ease; */
+
+}
+
+/* .fullcontainer:hover{
+    transform: translateY(-20px);
+ }
+   */
+
+#imagediv {
+    width: 50%;
+    border-right: 1px solid #dfdbdb;
+    background-image: url("https://images.pexels.com/photos/5475752/pexels-photo-5475752.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    border-radius: 20px;
+
+    /* border-radius:  16%  60% 60% 16% / 16% 50% 50% 16% ; */
+
+
+}
+
+input {
+    padding: 4%;
+}
+
+#toast {
+    display: none;
+    position: fixed;
+
+}
+
+#logindiv {
+    width: 50%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 10%;
+    margin-top: 5%;
+
+
+}
+
+
+input {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #e6e2e2;
+    margin-bottom: 5%;
+}
+
+#accepted,
+#remember {
+    width: 15px;
+
+}
+
+.first {
+    display: flex;
+
+}
+
+.pindiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.re {
+    margin-top: 2%;
+    margin-left: 3%;
+    font-size: 12px;
+}
+.icon{
+    margin-left: 3%;
 }
 
 button {
-    cursor: pointer;
-    border: 0;
-    border-radius: 7px;
-    padding: 10px 15px;
-    background: #6c4ce3;
+    width: 150PX;
+    height: 40PX;
+    border: 1px solid #e6e2e2;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-left: 34%;
     color: white;
+    transition: 2s;
+    background: linear-gradient(135deg, #7a7af0, #4b86dd, rgb(6, 5, 94));
 }
 
 button:hover {
-    opacity: 0.88;
+    background: linear-gradient(135deg, #03035a, hwb(216 9% 39%), #8a88da);
 }
 
-.hidden {
-    display: none !important;
+h1 {
+    margin-bottom: 15%;
+    transition: 2s;
+    animation: colorchange 4s infinite;
 }
 
-
-/* REGISTER AND LOGIN */
-
-.auth-wrap {
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    padding: 20px;
-    background: linear-gradient(135deg, #e9e4ff, #f8f7ff);
-}
-
-.auth-card {
-    background: white;
-    width: min(420px, 100%);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 30px #0001;
-}
-
-h1, h2, h3 {
-    margin-top: 0;
-}
-
-.auth-card h2 {
-    text-align: center;
-    color: #5635cb;
-}
-
-.field {
-    margin: 13px 0;
-}
-
-.field label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.field input,
-.field textarea,
-.field select,
-.toolbar input,
-.toolbar select {
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    background: white;
-}
-
-.error {
-    color: #d32f2f;
-    font-size: 12px;
-    min-height: 15px;
-    margin-top: 4px;
-}
-
-.auth-card .primary {
-    width: 100%;
-    margin-top: 8px;
-}
-
-.switch {
-    text-align: center;
-    margin: 18px 0 0;
-    font-size: 14px;
-}
-
-.switch a {
-    color: #5635cb;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.note {
-    font-size: 12px;
-    color: #777;
-    margin-top: 15px;
-}
-
-
-/* HEADER */
-
-#app {
-    min-height: 100vh;
-}
-
-.topbar {
-    background: #fff;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    padding: 15px 22px;
-    box-shadow: 0 2px 8px #0001;
-    position: sticky;
-    top: 0;
-    z-index: 5;
-}
-
-.brand {
-    font-size: 22px;
-    font-weight: bold;
-    color: #6545d8;
-    white-space: nowrap;
-}
-
-.toolbar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex: 1;
-}
-
-.toolbar input {
-    min-width: 120px;
-}
-
-.toolbar select {
-    width: auto;
-}
-
-.userbox {
-    white-space: nowrap;
-    font-size: 14px;
-}
-
-
-/* SIDEBAR AND MAIN */
-
-.layout {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    min-height: calc(100vh - 65px);
-}
-
-aside {
-    background: #fff;
-    padding: 22px;
-    border-right: 1px solid #eee;
-}
-
-aside h3 {
-    color: #6545d8;
-    margin: 5px 0 18px;
-}
-
-aside button {
-    display: block;
-    width: 100%;
-    text-align: left;
-    margin: 9px 0;
-    background: #f0edff;
-    color: #4530a5;
-}
-
-main {
-    padding: 25px;
-    min-width: 0;
-}
-
-
-/* WELCOME */
-
-.welcome {
-    background: linear-gradient(110deg, #6746dc, #987df2);
+#ttoast {
+    background-color: #f16464;
     color: white;
-    padding: 25px;
-    border-radius: 13px;
-    margin-bottom: 22px;
-}
-
-.welcome h2 {
-    margin-bottom: 8px;
-}
-
-
-/* FILTER */
-
-.filters {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin: 15px 0;
-}
-
-.filters input,
-.filters select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    background: #fff;
-}
-
-
-/* PRODUCT CARDS */
-
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
-    gap: 18px;
-}
-
-.product {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 3px 12px #0000000c;
-}
-
-.product img {
-    width: 100%;
-    height: 165px;
-    object-fit: cover;
-    background: #eee;
-}
-
-.product-info {
-    padding: 14px;
-}
-
-.product-info h3 {
-    font-size: 17px;
-    margin: 0 0 8px;
-}
-
-.price {
-    font-weight: bold;
-    color: #6545d8;
-    margin: 8px 0 13px;
-}
-
-.product-info button {
-    width: 100%;
-}
-
-
-/* HISTORY TABLE */
-
-.section {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 600px;
-}
-
-th, td {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid #eee;
-    font-size: 14px;
-}
-
-th {
-    background: #f2efff;
-    color: #4e37b5;
-}
-
-.empty {
-    padding: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    height: 50px;
     text-align: center;
-    color: #777;
+    border-radius: 10px;
+    display: none;
+    border: 1px solid #f3dada;
 }
 
-
-/* ORDER POPUP */
-
-.modal {
-    position: fixed;
-    inset: 0;
-    background: #0008;
-    display: grid;
-    place-items: center;
-    padding: 18px;
-    z-index: 10;
+.ss {
+    font-size: 12px;
 }
 
-.modal-card {
-    background: white;
-    width: min(450px, 100%);
-    padding: 25px;
-    border-radius: 13px;
-    max-height: 90vh;
-    overflow: auto;
+@keyframes colorchange {
+    0% {
+        color: white;
+    }
+
+    50% {
+        color: #03035a;
+    }
+
+    100% {
+        color: white;
+    }
 }
 
-.modal-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+input::placeholder {
+    padding-left: 5%;
+    font-size: 12px;
+    color: gray;
 }
 
-.close {
-    background: #eee;
-    color: #222;
-    padding: 6px 11px;
-}
-
-.modal-card textarea {
-    min-height: 75px;
-    resize: vertical;
-}
-
-.success {
+.toast {
+    background-color: aquamarine;
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    width: 200px;
+    height: 40px;
     text-align: center;
-    padding: 22px;
+
 }
 
-.success h2 {
-    color: #159447;
-}
-
-
-/* MOBILE RESPONSIVE */
-
-@media (max-width: 760px) {
-
-    .topbar {
-        flex-wrap: wrap;
-    }
-
-    .toolbar {
-        order: 3;
-        flex-basis: 100%;
-        flex-wrap: wrap;
-    }
-
-    .toolbar input {
-        flex: 1;
-    }
-
-    .layout {
-        grid-template-columns: 1fr;
-    }
-
-    aside {
-        border-right: 0;
-        border-bottom: 1px solid #eee;
-        padding: 12px;
-        display: flex;
-        gap: 8px;
-        overflow: auto;
-    }
-
-    aside h3 {
-        display: none;
-    }
-
-    aside button {
-        width: auto;
-        white-space: nowrap;
-        margin: 0;
-    }
-
-    .userbox {
-        margin-left: auto;
-    }
-
-    main {
-        padding: 15px;
-    }
-
+.toast p {
+    margin-top: 3%;
 }

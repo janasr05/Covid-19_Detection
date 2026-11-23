@@ -1,53 +1,261 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     width: 100%;
     height: 100vh;
+    background-color: #e5eaee;
+    font-family: "poppins";
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(160deg, #1950e7, #17b0f7);
+    color: white;
+    height: 90px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 2%;
     align-items: center;
-    background-color: rgba(239, 239, 234, 0.501)
+}
+
+header button {
+    width: 150px;
+    height: 40px;
+    border-radius: 50px;
+    color: white;
+    background-color: #e6eaed71;
+    border: none;
 
 }
-#login{
+
+header h4 {
+    font-size: 20px;
+}
+
+.hrdiv {
+    display: flex;
+}
+
+.hrin {
+    display: flex
+}
+
+.hrdiv {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 2%;
+    color: #9c9999;
+    font-size: 14px;
+}
+.hrdiv  p{
+    width:120px ;
+    
+}
+#Personalinfo{
+  color: #04acfa;
+}
+span{
+   padding-right: 5%;
+}
+.line{
+    height: 1px;
+    flex: 1;
+    width: 300px;
+   color: #a8a0a0;
+   border: 1px solid rgb(207, 204, 204);
+}
+#subtwo {
+    display: flex;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.one {
+    width: 70%;
+    border: 1px solid rgb(252, 242, 242);
+    height: 78vh;
+    margin-right: 2%;
+    padding: 1%;
+    padding-left: 2%;
+     padding-right: 2%;
+     background-color: white;
+     box-shadow:0px 10px 30px rgba(0,0,0,0.3) ;
+      border-radius: 20px;
+
+}
+
+.two {
+    width: 40%;
+    border: 1px solid rgb(252, 242, 242);
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    box-shadow:0px 10px 30px rgba(0,0,0,0.3) ;
     background-color: white;
-    width: 400px;
-    height: 500px;
+    border-radius: 20px;
+    height: 78vh;
+}
+.text{
+    margin-top: 2%;
+}
+.notes{
+    margin-top: 2%;
+}
+
+.Personal {
+    font-size: 20px;
+}
+
+.one input {
+    width: 100%;
+    height: 38px;
+    border: 1px solid #dadae2 ;
     border-radius: 10px;
-    border:1px solid rgb(180, 176, 176) ;
-    display: flex;
-    flex-direction: column;
-}
+    padding-left: 15px;
+  
+  
 
-#login div{
-    display: flex;
-    flex-direction: column;
-    align-items:center ;
 
 }
-input{
-    width: 80%;
+select{
+    width: 100%;
     height: 40px;
     border-radius: 10px;
-    border: 1px solid #c8c3c3;
+     border: 1px solid #dadae2 ;
+     color: #757474;
+     
 }
-label{
-   margin-left: 10%;
-   margin-top: 6%;
+.error{
+    font-size: 12px;
+    color: gray;
 }
-button{
-    width: 200px;
-    height: 40px;
+.space{
+    margin-top: 30px;
+    
+}
+input::placeholder{
+    font-size: 12px;
+}
+select{
+    padding-left: 1%;
+}
+.seconddivdiv{
+    display: flex;
+}
+.seconddivdiv p{
+    padding-left: 2%;
+    font-size: 14px;
+}
+
+.office{
+    font-weight: bold;
+    letter-spacing: 1px;
+   
+}
+.officediv{
+    margin-top: 2%;
+    width: 100%;
+    height: 80px;
+    border: 1px solid #e7dede;
+    padding: 2%;
+    background-color: rgb(250, 250, 250);
     border-radius: 10px;
-    border: 1px solid #6d6767;
-    background-color:#6c4ce3;
-    margin-top: 15%;
-    margin-left: 23%;
+   
+}
+span{
+    padding-left: 1%;
+}
+.radiodiv{
+    display: flex;
+    margin-top: 3%;
+}
+.radio{
+    display: flex;
+} 
+#radio{
+    margin-right: 2%;
+}
+#radio0{
+  margin-left: 4%;
+}
+.text{
+    width: 100%;
+    height: 150px;
+    border: 1px solid #bdb8b8;
+    border-bottom: 1px solid #aaa9a9;
+     background-color: rgb(250, 250, 250);
+   
+    
+     border-radius: 10px;
+}
+
+#file{
+    width: 100%;
+    height:150px;
+    border: 1px solid #bdb8b8;
+    
+      border-radius: 10px;
+}
+.textt{
+    width: 100%;
+    height: 150px;
+    border: 1px solid #bdb8b8;
+  background-color: rgb(250, 250, 250);
+     border-radius: 10px;
+}
+#special{
+    width: 100%;
+    height: 11vh;
+    border: none;
+    cursor: crosshair;
+}
+.Singnature{
+    padding-left: 2%;
+    margin-top: 2%;
+}
+#file{
+    border:2px dashed #6060f8;
+    text-align: center;
+    padding-top: 10%;
+    padding-left: 36%;
+     background-color: rgb(250, 250, 250)
+}
+#file::file-selector-button{
+   height: 40px;
+   border-radius: 10px;
+   border: 1px solid #f0eeee;
+   background-color: #04acfa;
+   color: #e5eaee;
+   font-weight: bold;
 
 }
+.cancel{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #a8a0a0;
+    font-weight: bold;
+
+}
+.cancel:hover{
+    background: #04acfa;
+    color: white;
+    
+    align-items: end;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 10px;
+    margin-right: 40px;
+    gap: 10px;
+}
+

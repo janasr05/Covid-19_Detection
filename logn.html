@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="fullcontainer">
+        <header>
+            <div>
+                <h4>New Employee Registration</h4>
+                <p>Complete the form below to register a new team member</p>
+            </div>
+            <div>
+                <button onclick="dash()">Login Data</button>
+            </div>
+        </header>
+
+        <div class="hrdiv">
+            <div>
+                <p id="Personalinfo"><span>1</span> Personal info</p>
+
+            </div>
+            <div class="line">
+
+            </div>
+            <div class="hrin">
+                <p> <span>2</span>Employment</p>
+
+            </div>
+            <div class="line">
+
+            </div>
+            <div class="hrin">
+                <p><span>3</span> Review</p>
+            </div>
+
+        </div>
+        <div id="subtwo">
+            <div class="one">
+                <h3 class="Personal">Personal information</h3>
+                <div class="space">
+                    <label class="label">First Name</label>
+                    <input type="text" id="fname" placeholder="Enter First Name ">
+                    <p id="Error"></p>
+                </div>
+                <div class="space">
+                    <label>Lastt Name</label>
+                    <input type="text" id="lname" placeholder="Enter Last Name ">
+                    <p id="Error"></p>
+                </div>
+                <div class="space">
+                    <label>Email</label>
+                    <input type="text" id="email" placeholder="Enter Your Email ">
+                    <p id="Error"></p>
+                </div>
+                <div class="space">
+                    <label>Phone</label>
+                    <input type="number" id="phone" placeholder="Enter Your Number ">
+                    <p id="Error" class="error">Formate:(xxx) xx-xxx</p>
+                </div>
+                <div class="space">
+                    <label>Employee ID</label>
+                    <input type="number" id="id" placeholder="Enter Your ID ">
+                    <p id="Error"></p>
+                </div>
+                <div class="space">
+                    <label> Department</label>
+                    <select name="departmant" id="departmant">
+                        <option value="ENG">Engineering</option>
+                        <option value="bcom">B.COM</option>
+                        <option value="bsc">Bsc</option>
+                    </select>
+                </div>
+                <div class="space">
+                    <label>Start Date</label>
+                    <input type="date" id="date" placeholder="Enter Your Name ">
+
+                    <p id="Error"></p>
+                </div>
+            </div>
+            <div class="two">
+                <h3 class="Personal">Employment Options</h3>
+                <div class="seconddiv">
+                    <div class="seconddivdiv">
+                        <input type="checkbox" name="option" value="Full-time">   Full-time 
+                    </div>
+                    <div class="seconddivdiv">
+                        <input type="checkbox" name="option" value="Benefits Enrolled">Benefits Enrolled
+                    </div>
+                    <div class="seconddivdiv">
+                        <input type="checkbox" name="option" value="Parking Pass">Parking Pass
+                    </div>
+                </div>
+
+                <div>
+                    <div class="officediv">
+                        <p class="office">Office Floor</p>
+                        <div class="radiodiv">
+                            <div class="radio" id="radio">
+                                <input type="radio" name="floor" value="1"><span>1</span>
+                            </div>
+                            <div class="radio" id="radio0">
+                                <input type="radio" name="floor" value="2"><span>2</span>
+                            </div>
+                            <div class="radio" id="radio0">
+                                <input type="radio" name="floor" value="3"><span>3</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="notes">Notes</p>
+                    <textarea class="textt" id="notes"></textarea>
+                    <input id="file" type="file" accept="image/*">
+                    <div class="text">
+                        <p class="Singnature">Singnature</p>
+                        <textarea id="special"></textarea>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="cancel">Cancel</button>
+            <button class="cancel" onclick="getdata()">Submit</button>
+        </div>
+
+    </div>
+    </div>
+    <script>
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+       
+        function getdata() {
+             let types = [];
+        document.querySelectorAll('input[nane="option"]:checked').forEach(function (item) {
+            types.push(item.value);
+
+        });
+
+            let image = document.getElementById("file").files[0];
+            let reader = new FileReader();
+
+            let user = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                id: document.getElementById("id").value,
+                departmant: document.getElementById("departmant").value,
+                date: document.getElementById("date").value,
+                employee: {
+
+
+
+
+                    type: types.join(", "),
+                    floor: document.querySelector('input[name="floor"]:checked')?.value,
+                    notes: document.getElementById("notes").value,
+                    image: "",
+                    sign: document.getElementById("special").value
+                }
+            };
+
+            reader.onload = function () {
+                user.employee.image = reader.result;
+                users.push(user);
+                localStorage.setItem("users",JSON.stringify(users));
+                display(users);
+
+
+            };
+            reader.readAsDataURL(image);
+
+
+
+
+
+
+
+        }
+         function dash(){
+            window.location.href="logininput.html";
+        }
+      
+       
+
+    </script>
+</body>
+
+</html>

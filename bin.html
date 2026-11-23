@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            font-family: "poppins";
+            color: #03035a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+        }
+
+        .fulldiv {
+            border: 1px solid #e7e1e1;
+            width: 600px;
+            height: 500px;
+            box-shadow: 0px 10px 30px;
+            border-radius: 20px;
+            transition: 4s ease;
+
+
+
+        }
+
+        .fulldiv:hover {
+            transform: translateY(-20px);
+        }
+
+        .first {
+            border: 1px solid gray;
+            width: 100%;
+            height: 30%;
+            background-image: url("https://images.pexels.com/photos/5475752/pexels-photo-5475752.jpeg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+
+
+        }
+
+        .secont {
+            padding-left: 10%;
+            padding-right: 10%;
+            margin-top: 5%;
+            text-align: center;
+        }
+
+        small {
+            font-size: 14px;
+
+        }
+
+        .email {
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .pindiv {
+            margin-top: 8%;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        .link {
+            font-size: 10px;
+            margin-top: 2%;
+            margin-left: 3%;
+        }
+
+        button {
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid #e7e3e3;
+            margin-left: 4%;
+            margin-top: 5%;
+            background-color: rgb(3, 88, 3);
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: rgb(3, 66, 3);
+        }
+
+        input {
+            border: 1px solid #d4cccc;
+            height: 40px;
+            width: 50%;
+            border-radius: 5px;
+        }
+
+        input:hover {
+            border: 1px solid #756f6f;
+        }
+
+        h3 {
+            font-size: 30px;
+            letter-spacing: 1px;
+            animation: changecolor 4s infinite;
+        }
+
+        label {
+            padding-right: 45%;
+            font-size: 15px;
+        }
+
+        @keyframes changecolor {
+            0% {
+                color: white;
+            }
+
+            50% {
+                color: #03035a;
+            }
+
+            100% {
+                color: white;
+            }
+        }
+
+        h4 {
+            color: white;
+            margin-left: 3%;
+            margin-top: 3%;
+            letter-spacing: 1px;
+
+        }
+
+        i {
+            margin-right: 1%;
+        }
+        input{
+            padding: 2%;
+        }
+
+        #toast{
+            background-color: green;
+            width: 200px;
+            height: 40px;
+            color: white;
+            position: absolute;
+            top: 10px;
+            text-align: center;
+            right: 20px;
+            display: none;
+            border-radius: 10px;
+
+
+        }
+             #toast p{
+                 margin-top: 3%;
+             }
+
+             #ttoast{
+                background-color: #f16464;
+                color: white;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 200px;
+                height: 50px;
+                text-align: center;
+                border-radius: 10px;
+               display: none;
+                border: 1px solid #f3dada;
+             }
+            .ss{
+                font-size: 12px;
+             }
+             #icon{
+                margin-right: 3%;
+             }
+    </style>
+     <div id="toast">
+            <p><i i id="icon"  class="fa-solid fa-check" style="color: rgb(232, 235, 239);"></i>PIN Successfuly </p>
+            <small></small>
+        </div>
+         <div id="ttoast">
+            <p><i id="icon" class="fa-solid fa-xmark" style="color: rgb(232, 235, 239);"></i>Error</p>
+            <small class="ss"> Invalid PIN'S Not Allow</small>
+        </div>
+    <div class="fulldiv">
+
+       
+
+        <div class="first">
+            <div onclick="gologin()">
+                <h4><i class="fa-solid fa-circle-left" style="color: rgb(232, 235, 239);"></i>Go Back</h43>
+            </div>
+
+        </div>
+        <div class="secont">
+            <h3>Enter Your OPT here </h3>
+
+            <p class="email">Jananim@gmail.com</p>
+            <div class="pindiv">
+                <label>PIN</label>
+
+            </div>
+            <input type="number" id="pin">
+            <P class="link">Do you want to Resend OTP <a href="">Resend</a></P>
+            <button onclick="gomain()">CONFORM</button>
+
+
+        </div>
+
+        <script>
+            function gomain() {
+                let pin = document.getElementById("pin").value;
+                if (pin === "1010") {
+                    totoast();
+                    setTimeout(function () {
+                        window.location.href = "main.html"
+                    },1000)
+
+                }
+                else {
+                    inpin();
+                    window.localStorage.href = "bin.html"
+                }
+            }
+
+            function totoast() {
+                let toast = document.getElementById("toast");
+                toast.style.display = "block";
+                setTimeout(function () {
+                    toast.style.display = "none";
+                }, 1000)
+            }
+
+            function gologin(){
+                window.location.href="checkbox.html";
+            }
+
+            function inpin(){
+                let pin=document.getElementById("ttoast");
+                pin.style.display="block";
+
+                setTimeout(function(item){
+                    pin.style.display="none";
+                },1000)
+            }
+
+            
+        </script>
+
+</body>
+
+</html>
